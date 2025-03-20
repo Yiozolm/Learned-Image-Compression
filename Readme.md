@@ -11,16 +11,21 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [Mbt2018](http://arxiv.org/pdf/1809.02736) **NurIPS2018** Mean+Scale+Context Hyperprior
 - [x] [Cheng2020Anchor](http://arxiv.org/pdf/2001.01568) **CVPR2020**
 - [x] [Cheng2020Attn](http://arxiv.org/pdf/2001.01568) **CVPR2020**
+- [x] [InvCompress](https://dl.acm.org/doi/10.1145/3474085.3475213) **ACM MM2021**
+- [ ] [Informer](https://openaccess.thecvf.com/content/CVPR2022/html/Kim_Joint_Global_and_Local_Hierarchical_Priors_for_Learned_Image_Compression_CVPR_2022_paper.html) **CVPR2022**
 
 #### After Straight-Through Estimator(STE)
 - [ ] [minnen2020](https://ieeexplore.ieee.org/document/9190935/) **ICIP2020** LRP & STE
-- [ ] [Cheng2020AnchorCheckBoard](http://arxiv.org/pdf/2103.15306) **CVPR2021**
+- [ ] [Cheng2020AnchorCheckBoard](http://arxiv.org/pdf/2103.15306) **CVPR2021** Parallel Acceleration
+- [ ] [Entroformer2022](http://arxiv.org/pdf/2202.05492) **ICLR2022**
+- [ ] [DPICT2022](https://ieeexplore.ieee.org/document/9879330/) **CVPR2022**
 - [x] [ELIC2022](http://arxiv.org/pdf/2203.10886) **CVPR2022** SCCTX 
 - [x] [WACNN2022](https://ieeexplore.ieee.org/document/9878760/) **CVPR2022**
 - [x] [STF2022](https://ieeexplore.ieee.org/document/9878760/) **CVPR2022**
 - [x] [TCM2023](https://ieeexplore.ieee.org/document/10204195/) **CVPR2023**
 - [x] [MLIC2023](https://dl.acm.org/doi/10.1145/3581783.3611694) **ACM MM2023**
 - [x] [CCA2024](https://arxiv.org/pdf/2410.04847) **NurIPS2024** Auxiliary Loss
+- [x] [WeConvene](http://arxiv.org/abs/2407.09983) **ECCV2024** Add Wavelet Transform into TCM2023
 - [x] [FLIC2025](http://arxiv.org/pdf/2501.13751) **ICLR2025** 
 
 ---
@@ -34,8 +39,8 @@ Single **RTX A4000 GPU** is used to evaluate the models.
 ### Related Links
 * Unofficial Minnen2020 Implement: https://github.com/tokkiwa/minnen2020
 * Unofficial ELIC2022 ReImplement: https://github.com/VincentChandelier/ELiC-ReImplemetation
-* STF official Repo: https://github.com/Googolxx/STF
-* TCM official Repo: https://github.com/jmliu206/LIC_TCM
-* MLIC Series official Repo: https://github.com/JiangWeibeta/MLIC
-* CCA official Repo: https://github.com/LabShuHangGU/CCA
-* FLIC official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
+* STF2022 official Repo: https://github.com/Googolxx/STF
+* TCM2023 official Repo: https://github.com/jmliu206/LIC_TCM
+* MLIC2023 Series official Repo: https://github.com/JiangWeibeta/MLIC
+* CCA2024 official Repo: https://github.com/LabShuHangGU/CCA
+* FLIC2025 official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
