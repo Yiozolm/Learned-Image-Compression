@@ -26,7 +26,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [MLIC2023](https://dl.acm.org/doi/10.1145/3581783.3611694) **ACM MM2023**
 - [x] [CCA2024](https://arxiv.org/pdf/2410.04847) **NurIPS2024** Auxiliary Loss
 - [x] [WeConvene](http://arxiv.org/abs/2407.09983) **ECCV2024** Add Wavelet Transform into TCM2023
-- [x] [FLIC2025](http://arxiv.org/pdf/2501.13751) **ICLR2025** 
+- [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** 
 
 ---
 ### Evaluation
@@ -43,4 +43,4 @@ Single **RTX A4000 GPU** is used to evaluate the models.
 * TCM2023 official Repo: https://github.com/jmliu206/LIC_TCM
 * MLIC2023 Series official Repo: https://github.com/JiangWeibeta/MLIC
 * CCA2024 official Repo: https://github.com/LabShuHangGU/CCA
-* FLIC2025 official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
+* FLIC2024 official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
