@@ -25,8 +25,9 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [TCM2023](https://ieeexplore.ieee.org/document/10204195/) **CVPR2023**
 - [x] [MLIC2023](https://dl.acm.org/doi/10.1145/3581783.3611694) **ACM MM2023**
 - [x] [CCA2024](https://arxiv.org/pdf/2410.04847) **NurIPS2024** Auxiliary Loss
-- [x] [WeConvene](http://arxiv.org/abs/2407.09983) **ECCV2024** Add Wavelet Transform into TCM2023
-- [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** 
+- [x] [WeConvene](http://arxiv.org/pdf/2407.09983) **ECCV2024** Add Wavelet Transform into TCM2023
+- [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** multi-scale directional frequency decomposition
+- [ ] [MambaIC2025](https://arxiv.org/pdf/2503.12461) **CVPR2025** Integrate Mamba into Hyper Encoder/Decoder
 
 ---
 ### Evaluation

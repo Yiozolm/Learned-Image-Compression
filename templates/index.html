@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compression Model Evaluation</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .plot-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .description {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .description h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .description p {
+            margin-bottom: 1em;
+        }
+
+        .metrics-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-info {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .metric-info h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        .metric-info p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .controls-info {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .controls-info h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .controls-info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .controls-info li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Compression Model Evaluation Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="description">
+            <h2>Rate-Distortion Analysis</h2>
+            <p>This dashboard visualizes the performance of various learned image compression models using different metrics. Each plot shows the relationship between compression rate (BPP) and quality metrics, with lambda values displayed for each point.</p>
+            <p><strong>Note:</strong> the λ Values in <strong>CCA2024</strong> is different to other models due to its loss fuction is reformulated to R = D + λ * R</pp>
+            <div class="controls-info">
+                <h3>Plot Controls</h3>
+                <ul>
+                    <!-- <li><strong>Toggle λ Values:</strong> Click "Show λ Values" in the legend to show/hide lambda values</li> -->
+                    <li><strong>Model Selection:</strong> Click model names in the legend to show/hide specific models</li>
+                    <li><strong>Zoom:</strong> Use the zoom tools or drag to select a region</li>
+                    <li><strong>Reset:</strong> Double-click the plot to reset the view</li>
+                </ul>
+            </div>
+
+            <div class="metrics-info">
+                <div class="metric-info">
+                    <h3>PSNR</h3>
+                    <p>Peak Signal-to-Noise Ratio - Higher values indicate better quality</p>
+                </div>
+                <div class="metric-info">
+                    <h3>MS-SSIM</h3>
+                    <p>Multi-Scale Structural Similarity - Higher values indicate better structural similarity</p>
+                </div>
+                <div class="metric-info">
+                    <h3>FID</h3>
+                    <p>Fréchet Inception Distance - Lower values indicate better perceptual quality</p>
+                </div>
+                <div class="metric-info">
+                    <h3>LPIPS</h3>
+                    <p>Learned Perceptual Image Patch Similarity - Lower values indicate better perceptual similarity</p>
+                </div>
+                <div class="metric-info">
+                    <h3>DISTS</h3>
+                    <p>Deep Image Structure and Texture Similarity - Lower values indicate better structural and textural similarity</p>
+                </div>
+            </div>
+        </div>
+
+        {% if 'psnr' in plots_json %}
+        <div class="plot-container">
+            <div id="psnr-plot"></div>
+        </div>
+        {% endif %}
+
+        {% if 'ms-ssim' in plots_json %}
+        <div class="plot-container">
+            <div id="ms-ssim-plot"></div>
+        </div>
+        {% endif %}
+
+        {% if 'fid' in plots_json %}
+        <div class="plot-container">
+            <div id="fid-plot"></div>
+        </div>
+        {% endif %}
+
+        {% if 'lpips' in plots_json %}
+        <div class="plot-container">
+            <div id="lpips-plot"></div>
+        </div>
+        {% endif %}
+
+        {% if 'dists' in plots_json %}
+        <div class="plot-container">
+            <div id="dists-plot"></div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Create all plots
+        {% if 'psnr' in plots_json %}
+        const psnrPlot = JSON.parse('{{ plots_json.psnr | safe }}');
+        Plotly.newPlot('psnr-plot', psnrPlot.data, psnrPlot.layout);
+        {% endif %}
+
+        {% if 'ms-ssim' in plots_json %}
+        const msssimPlot = JSON.parse('{{ plots_json["ms-ssim"] | safe }}');
+        Plotly.newPlot('ms-ssim-plot', msssimPlot.data, msssimPlot.layout);
+        {% endif %}
+
+        {% if 'fid' in plots_json %}
+        const fidPlot = JSON.parse('{{ plots_json.fid | safe }}');
+        Plotly.newPlot('fid-plot', fidPlot.data, fidPlot.layout);
+        {% endif %}
+
+        {% if 'lpips' in plots_json %}
+        const lpipsPlot = JSON.parse('{{ plots_json.lpips | safe }}');
+        Plotly.newPlot('lpips-plot', lpipsPlot.data, lpipsPlot.layout);
+        {% endif %}
+
+        {% if 'dists' in plots_json %}
+        const distsPlot = JSON.parse('{{ plots_json.dists | safe }}');
+        Plotly.newPlot('dists-plot', distsPlot.data, distsPlot.layout);
+        {% endif %}
+    </script>
+</body>
+</html> 
