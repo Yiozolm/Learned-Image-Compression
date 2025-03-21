@@ -9,10 +9,11 @@ from pathlib import Path
 
 app = Flask(__name__)
 
+
 def load_evaluation_data():
     data_dir = Path('./Evaluation Result/json')
     all_data = []
-    
+
     for json_file in data_dir.glob('*.json'):
         model_name = json_file.stem
         with open(json_file, 'r') as f:
@@ -31,30 +32,31 @@ def load_evaluation_data():
                     'dists': model_data['DISTS'][i]
                 }
                 all_data.append(point)
-    
+
     return pd.DataFrame(all_data)
+
 
 def create_metric_plot(df, metric, title):
     # Create scatter plot with lines
     fig = px.scatter(df, x='bpp', y=metric, color='model',
-                    title=title,
-                    labels={'bpp': 'Bits Per Pixel (BPP)',
-                           metric: metric.upper(),
-                           'model': 'Model'},
-                    template='plotly_white')
-    
+                     title=title,
+                     labels={'bpp': 'Bits Per Pixel (BPP)',
+                             metric: metric.upper(),
+                             'model': 'Model'},
+                     template='plotly_white')
+
     # Add lines connecting points for each model
     for model in df['model'].unique():
         model_data = df[df['model'] == model].sort_values('bpp')
         fig.add_trace(
             go.Scatter(x=model_data['bpp'], y=model_data[metric],
-                      mode='lines',
-                      name=model + ' (line)',
-                      showlegend=False,
-                      line=dict(dash='solid'))
+                       mode='lines',
+                       name=model + ' (line)',
+                       showlegend=False,
+                       line=dict(dash='solid'))
         )
-    
-    # Add lambda values as text labels
+
+    # Add lambda values as text labels with transparency
     for model in df['model'].unique():
         model_data = df[df['model'] == model]
         fig.add_trace(
@@ -65,16 +67,19 @@ def create_metric_plot(df, metric, title):
                 text=model_data['lambda'].round(4),
                 textposition="top center",
                 showlegend=False,
-                textfont=dict(size=8, color='black')
+                textfont=dict(
+                    size=8,
+                    color='rgba(0, 0, 0, 0.6)'  # Black with 60% opacity
+                )
             )
         )
-    
+
     # Calculate x-axis range
     max_bpp = df['bpp'].max()
     dtick = 0.2  # Set tick interval to 0.2
     num_ticks = int(np.ceil(max_bpp / dtick))
     x_range = [0, (num_ticks + 0.5) * dtick]  # Add 0.5 tick space for padding
-    
+
     # Customize layout
     fig.update_layout(
         hovermode='closest',
@@ -111,8 +116,9 @@ def create_metric_plot(df, metric, title):
             font=dict(color='black')
         )
     )
-    
+
     return fig
+
 
 def create_all_plots(df):
     metrics = {
@@ -122,14 +128,15 @@ def create_all_plots(df):
         'lpips': 'Rate-Distortion Curve (LPIPS)',
         'dists': 'Rate-Distortion Curve (DISTS)'
     }
-    
+
     plots = {}
     for metric, title in metrics.items():
         if metric in df.columns:
             fig = create_metric_plot(df, metric, title)
             plots[metric] = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
+
     return plots
+
 
 @app.route('/')
 def index():
@@ -137,5 +144,6 @@ def index():
     plots_json = create_all_plots(df)
     return render_template('index.html', plots_json=plots_json)
 
+
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
