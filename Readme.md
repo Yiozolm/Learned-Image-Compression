@@ -13,12 +13,12 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [Cheng2020Attn](http://arxiv.org/pdf/2001.01568) **CVPR2020**
 - [x] [InvCompress](https://dl.acm.org/doi/10.1145/3474085.3475213) **ACM MM2021**
 - [ ] [Informer](https://openaccess.thecvf.com/content/CVPR2022/html/Kim_Joint_Global_and_Local_Hierarchical_Priors_for_Learned_Image_Compression_CVPR_2022_paper.html) **CVPR2022**
+- [x] [DPICT2022](https://ieeexplore.ieee.org/document/9879330/) **CVPR2022**
 
 #### After Straight-Through Estimator(STE)
 - [ ] [minnen2020](https://ieeexplore.ieee.org/document/9190935/) **ICIP2020** LRP & STE
 - [ ] [Cheng2020AnchorCheckBoard](http://arxiv.org/pdf/2103.15306) **CVPR2021** Parallel Acceleration
 - [ ] [Entroformer2022](http://arxiv.org/pdf/2202.05492) **ICLR2022**
-- [ ] [DPICT2022](https://ieeexplore.ieee.org/document/9879330/) **CVPR2022**
 - [x] [ELIC2022](http://arxiv.org/pdf/2203.10886) **CVPR2022** SCCTX 
 - [x] [WACNN2022](https://ieeexplore.ieee.org/document/9878760/) **CVPR2022**
 - [x] [STF2022](https://ieeexplore.ieee.org/document/9878760/) **CVPR2022**
