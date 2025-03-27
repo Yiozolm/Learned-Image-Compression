@@ -9,6 +9,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [Hyperprior](http://arxiv.org/pdf/1802.01436) **ICLR2018** Scale-Only Hyperprior
 - [x] [Mbtmean-2018](http://arxiv.org/pdf/1809.02736) **NurIPS2018** Mean+Scale Hyperprior
 - [x] [Mbt2018](http://arxiv.org/pdf/1809.02736) **NurIPS2018** Mean+Scale+Context Hyperprior
+- [x] [SGA2020](http://arxiv.org/pdf/2006.04240) **NeurIPS 2020** SGA Guided Hyperprior
 - [x] [Cheng2020Anchor](http://arxiv.org/pdf/2001.01568) **CVPR2020** Gaussian Mixture Model
 - [x] [Cheng2020Attn](http://arxiv.org/pdf/2001.01568) **CVPR2020** Gaussian Mixture Model
 - [x] [InvCompress](https://dl.acm.org/doi/10.1145/3474085.3475213) **ACM MM2021** Invertible Encoder/Decoder
@@ -43,8 +44,10 @@ Single **RTX A4000 GPU** is used to evaluate the models.
 ### Related Links
 * Unofficial Minnen2020 Implement: https://github.com/tokkiwa/minnen2020
 * Unofficial ELIC2022 ReImplement: https://github.com/VincentChandelier/ELiC-ReImplemetation
-* STF2022 official Repo: https://github.com/Googolxx/STF
+* WACNN2022 & STF2022 official Repo: https://github.com/Googolxx/STF
 * TCM2023 official Repo: https://github.com/jmliu206/LIC_TCM
 * MLIC2023 Series official Repo: https://github.com/JiangWeibeta/MLIC
 * CCA2024 official Repo: https://github.com/LabShuHangGU/CCA
+* WeConvene official Repo: https://github.com/fengyurenpingsheng/WeConvene
 * FLIC2024 official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
+* MambaIC2025 official Repo: https://github.com/AuroraZengfh/MambaIC
