@@ -40,7 +40,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - **2025-3-28:** Add `STanH` `LALIC2025` into expo
 ---
 ### Evaluation
-Some evaluation results are available in this repo.
+Some evaluation results on [Kodak](https://r0k.us/graphics/kodak/) Dataset are available in this repo.
 
 The used checkpoint files are obtained from both [Compressai](https://github.com/InterDigitalInc/CompressAI) and author repos.
 
