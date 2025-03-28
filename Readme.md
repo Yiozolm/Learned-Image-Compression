@@ -29,6 +29,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [WeConvene](http://arxiv.org/pdf/2407.09983) **ECCV2024** Add Wavelet Transform into TCM2023
 - [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** Multi-Scale Directional Frequency Decomposition
 - [ ] [MambaIC2025](https://arxiv.org/pdf/2503.12461) **CVPR2025** Integrate Mamba into Hyper Encoder/Decoder
+- [x] [LALIC2025](https://arxiv.org/pdf/2502.05741) **CVPR2025** RMKV into LIC
 
 #### Other
 - [x] [STanH](http://arxiv.org/pdf/2410.00557) **TIP** Tanh Quantization
@@ -36,7 +37,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 ---
 ### Update Log
 - **2025-3-27:** The Progress on Entroformer is quite slow due to original code is really hard to use 
-- **2025-3-28:** Add `STanH` into expo
+- **2025-3-28:** Add `STanH` `LALIC2025` into expo
 ---
 ### Evaluation
 Some evaluation results are available in this repo.
@@ -58,3 +59,4 @@ The used checkpoint files are obtained from both [Compressai](https://github.com
 * FLIC2024 official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
 * MambaIC2025 official Repo: https://github.com/AuroraZengfh/MambaIC
 * STanH official Repo: https://github.com/EIDOSLAB/StanH
+* LALIC2025 official Repo: https://github.com/sjtu-medialab/RwkvCompress
