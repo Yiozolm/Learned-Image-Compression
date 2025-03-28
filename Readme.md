@@ -13,7 +13,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [Cheng2020Anchor](http://arxiv.org/pdf/2001.01568) **CVPR2020** Gaussian Mixture Model
 - [x] [Cheng2020Attn](http://arxiv.org/pdf/2001.01568) **CVPR2020** Gaussian Mixture Model
 - [x] [InvCompress](https://dl.acm.org/doi/10.1145/3474085.3475213) **ACM MM2021** Invertible Encoder/Decoder
-- [ ] [Informer](https://openaccess.thecvf.com/content/CVPR2022/html/Kim_Joint_Global_and_Local_Hierarchical_Priors_for_Learned_Image_Compression_CVPR_2022_paper.html) **CVPR2022** Joint global and local hyperpriors
+- [ ] [Informer](https://openaccess.thecvf.com/content/CVPR2022/html/Kim_Joint_Global_and_Local_Hierarchical_Priors_for_Learned_Image_Compression_CVPR_2022_paper.html) **CVPR2022** Joint Global and Local Hyperpriors
 - [x] [DPICT2022](https://ieeexplore.ieee.org/document/9879330/) **CVPR2022** Fine Granular Scalability
 
 #### After Straight-Through Estimator(STE)
@@ -27,19 +27,25 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [MLIC2023](https://dl.acm.org/doi/10.1145/3581783.3611694) **ACM MM2023** Multi Reference Entropy Model
 - [x] [CCA2024](https://arxiv.org/pdf/2410.04847) **NurIPS2024** Auxiliary Loss
 - [x] [WeConvene](http://arxiv.org/pdf/2407.09983) **ECCV2024** Add Wavelet Transform into TCM2023
-- [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** multi-scale directional frequency decomposition
+- [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** Multi-Scale Directional Frequency Decomposition
 - [ ] [MambaIC2025](https://arxiv.org/pdf/2503.12461) **CVPR2025** Integrate Mamba into Hyper Encoder/Decoder
+
+#### Other
+- [x] [STanH](http://arxiv.org/pdf/2410.00557) **TIP** Tanh Quantization
 
 ---
 ### Update Log
 - **2025-3-27:** The Progress on Entroformer is quite slow due to original code is really hard to use 
+- **2025-3-28:** Add `STanH` into expo
 ---
 ### Evaluation
 Some evaluation results are available in this repo.
 
 The used checkpoint files are obtained from both [Compressai](https://github.com/InterDigitalInc/CompressAI) and author repos.
 
-Single **RTX A4000 GPU** is used to evaluate the models.
+#### Detailed Configuration
+1. Single **RTX A4000 GPU** is used to evaluate the models.
+2. `python==3.8.10` `torch==1.11.0` `cuda==113` `pytorch_msssim==1.0.0` `pytorch_fid==0.3.0` `lpips==0.1.4` `DISTS_pytorch==0.1`
 
 ### Related Links
 * Unofficial Minnen2020 Implement: https://github.com/tokkiwa/minnen2020
@@ -51,3 +57,4 @@ Single **RTX A4000 GPU** is used to evaluate the models.
 * WeConvene official Repo: https://github.com/fengyurenpingsheng/WeConvene
 * FLIC2024 official Repo: https://github.com/qingshi9974/ICLR2024-FTIC
 * MambaIC2025 official Repo: https://github.com/AuroraZengfh/MambaIC
+* STanH official Repo: https://github.com/EIDOSLAB/StanH
