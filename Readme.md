@@ -38,7 +38,8 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 ---
 ### Update Log
 - **2025-3-27:** The Progress on Entroformer is quite slow due to original code is really hard to use 
-- **2025-3-28:** Add `STanH` `LALIC2025` into expo
+- **2025-3-28:** Add `STanH` `LALIC2025` into repo
+- **2025-4-6:** Add `DCAE2025` into repo
 ---
 ### Evaluation
 Some evaluation results on [Kodak](https://r0k.us/graphics/kodak/) Dataset are available in this repo.
