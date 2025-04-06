@@ -30,6 +30,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** Multi-Scale Directional Frequency Decomposition
 - [ ] [MambaIC2025](https://arxiv.org/pdf/2503.12461) **CVPR2025** Integrate Mamba into Hyper Encoder/Decoder
 - [x] [LALIC2025](https://arxiv.org/pdf/2502.05741) **CVPR2025** RMKV into LIC
+- [ ] [DCAE2025](https://arxiv.org/pdf/2504.00496) **CVPR2025** Dictionary-based Cross Attention Module
 
 #### Other
 - [x] [STanH](http://arxiv.org/pdf/2410.00557) **TIP** Tanh Quantization
