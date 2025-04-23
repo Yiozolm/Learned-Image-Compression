@@ -57,22 +57,22 @@ def create_metric_plot(df, metric, title):
         )
 
     # Add lambda values as text labels with transparency
-    for model in df['model'].unique():
-        model_data = df[df['model'] == model]
-        fig.add_trace(
-            go.Scatter(
-                x=model_data['bpp'],
-                y=model_data[metric],
-                mode='text',
-                text=model_data['lambda'].round(4),
-                textposition="top center",
-                showlegend=False,
-                textfont=dict(
-                    size=8,
-                    color='rgba(0, 0, 0, 0.6)'  # Black with 60% opacity
-                )
-            )
-        )
+    # for model in df['model'].unique():
+    #     model_data = df[df['model'] == model]
+    #     fig.add_trace(
+    #         go.Scatter(
+    #             x=model_data['bpp'],
+    #             y=model_data[metric],
+    #             mode='text',
+    #             text=model_data['lambda'].round(4),
+    #             textposition="top center",
+    #             showlegend=False,
+    #             textfont=dict(
+    #                 size=8,
+    #                 color='rgba(0, 0, 0, 0.6)'  # Black with 60% opacity
+    #             )
+    #         )
+    #     )
 
     # Calculate x-axis range
     max_bpp = df['bpp'].max()

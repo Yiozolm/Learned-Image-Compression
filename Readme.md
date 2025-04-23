@@ -30,7 +30,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - [x] [FLIC2024](http://arxiv.org/pdf/2501.13751) **ICLR2024** Multi-Scale Directional Frequency Decomposition
 - [ ] [MambaIC2025](https://arxiv.org/pdf/2503.12461) **CVPR2025** Integrate Mamba into Hyper Encoder/Decoder
 - [x] [LALIC2025](https://arxiv.org/pdf/2502.05741) **CVPR2025** RMKV into LIC
-- [ ] [DCAE2025](https://arxiv.org/pdf/2504.00496) **CVPR2025** Dictionary-based Cross Attention Module
+- [x] [DCAE2025](https://arxiv.org/pdf/2504.00496) **CVPR2025** Dictionary-based Cross Attention Module
 
 #### Other
 - [x] [STanH](http://arxiv.org/pdf/2410.00557) **TIP** Tanh Quantization
@@ -40,6 +40,7 @@ A personal review to existing Learned Image Compression (LIC) Methods.
 - **2025-3-27:** The Progress on Entroformer is quite slow due to original code is really hard to use 
 - **2025-3-28:** Add `STanH` `LALIC2025` into repo
 - **2025-4-6:** Add `DCAE2025` into repo
+- **2025-4-23：** Add `A4000` branch, we would add `3090` branch based on `troch==2.4.0` soon
 ---
 ### Evaluation
 Some evaluation results on [Kodak](https://r0k.us/graphics/kodak/) Dataset are available in this repo.
